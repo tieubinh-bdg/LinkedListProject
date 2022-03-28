@@ -3,10 +3,25 @@
 #include <chrono>
 using namespace std;
 
-bool LinkedList::isEmpty() {
+LinkedList::LinkedList() {
+	first = NULL;
+}
+LinkedList::~LinkedList() {
+	Node* a = first;
+	while (a != NULL) {
+		Node* temp = a->next;
+		free(a);
+		a = temp;
+		//A == null at last of while.
+	}
+	cout << "Deconstructor Node" << endl;
+	/*delete[] first;*/
+	cout << "Deconstructor LINKEDLIST" << endl;
+}
+bool LinkedList::IsEmpty() {
 	return first == NULL;
 }
-int LinkedList::getCount() {
+int LinkedList::GetCount() {
 	int count = 0;
 	Node* temp = first;
 	while (temp != NULL) {
@@ -15,52 +30,48 @@ int LinkedList::getCount() {
 	}
 	return count;
 }
-void LinkedList::displayList() {
-	Node* currentL = first;
+void LinkedList::DisplayList() {
+	Node* current = first;
 	cout << "List: ";
-	while (currentL != NULL) {
-		currentL->DislayNode();
-		currentL = currentL->next;
+	while (current != NULL) {
+		current->DislayNode();
+		current = current->next;
 	}
 	cout << endl;
 }
-#pragma region GET
-int LinkedList::getFirst() {
-	return isEmpty() ? NULL : first->data;
+int LinkedList::GetFirst() {
+	return IsEmpty() ? NULL : first->data;
 }
 
-int LinkedList::getAt(int position) {
-	if (isEmpty()) {
-		return NULL; 
+int LinkedList::GetAt(int position) {
+	if (IsEmpty()) {
+		return NULL;
 	}
 	Node* temp = first;
 	if (position == 0) {
 		return temp->data; //return first->iData
-	} 
+	}
 	//if position out of length
-	if (position <= getCount() - 1) {
-		for (int i = 0; i < position; i++)
-		{
+	if (position <= GetCount() - 1) {
+		for (int i = 0; i < position; i++) {
 			temp = temp->next;
 		}
 	}
 	else return NULL;
-	Node* linkAt = temp;
-	return linkAt->data;
-}
-#pragma endregion
-#pragma region INSERT
-void LinkedList::insertFirst(int iData) {
-	Node* newLink = new Node(iData);
-	newLink->next = first; //oldFirst -> second 
-	first = newLink; //newLink -> first
+	Node* nodeAt = temp;
+	return nodeAt->data;
 }
 
-#pragma endregion
-#pragma region DELETE
-void LinkedList::deleteFirst() {
-	if (isEmpty()) return;
+void LinkedList::InsertFirst(int iData) {
+	Node* newNode = new Node(iData);
+	newNode->next = first; //oldFirst -> second 
+	first = newNode; //newLink -> first
+}
+
+void LinkedList::DeleteFirst() {
+	if (IsEmpty()) return;
 	Node* temp = first;
 	first = first->next;
 	free(temp);
+	temp = NULL;
 }

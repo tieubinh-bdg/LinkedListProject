@@ -6,15 +6,7 @@ class Node {
 public:
 	int data;
 	Node* next;
-	Node() {}
-	
-	Node(int iData) {
-		this->data = iData;
-	}
-	~Node() {
-		//NO catch
-		/*delete next;
-		cout << "Deconstructor Node" << endl;*/
-	}
+	Node();
+	Node(int iData);
 	void DislayNode();
 };

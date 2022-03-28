@@ -4,8 +4,6 @@
 class SingleLinkedList : public LinkedList
 {
 public:
-	SingleLinkedList() : LinkedList() {
-	}
-
+	SingleLinkedList();
 };
 
