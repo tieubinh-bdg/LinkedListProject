@@ -4,17 +4,17 @@ using namespace std;
 
 class Node {
 public:
-	int iData;
+	int data;
 	Node* next;
-	
-	//Default
 	Node() {}
-	//Overloading Construc: iData
+	
 	Node(int iData) {
-		this->iData = iData;
+		this->data = iData;
 	}
-	void displayLink() {
-		cout << "{ ";
-		cout << iData << " }";
-	} 
+	~Node() {
+		//NO catch
+		/*delete next;
+		cout << "Deconstructor Node" << endl;*/
+	}
+	void DislayNode();
 };

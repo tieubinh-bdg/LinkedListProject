@@ -141,15 +141,13 @@
   <ItemGroup>
     <ClInclude Include="Node.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="LinkedListApp.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SingleLinkedLink.h" />
+    <ClInclude Include="SingleLinkedList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="LinkedList.cpp" />
-    <ClCompile Include="LinkedListApp.cpp" />
-    <ClCompile Include="SingleLinkedLink.cpp" />
+    <ClCompile Include="SingleLinkedList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LinkedListProject.rc" />
