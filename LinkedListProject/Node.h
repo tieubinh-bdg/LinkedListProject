@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-class Link {
+class Node {
 public:
 	int iData;
-	Link* next;
+	Node* next;
 	
 	//Default
-	Link() {}
+	Node() {}
 	//Overloading Construc: iData
-	Link(int iData) {
+	Node(int iData) {
 		this->iData = iData;
 	}
 	void displayLink() {
