@@ -5,5 +5,7 @@ class SingleLinkedList : public LinkedList
 {
 public:
 	SingleLinkedList();
+	void InsertFirst(int data);
+	void DeleteFirst();
 };
 

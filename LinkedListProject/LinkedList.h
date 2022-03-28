@@ -8,11 +8,15 @@ private:
 public:
 	LinkedList();
 	~LinkedList();
-	bool IsEmpty();
-	int GetCount();
+#pragma region SETTER GETTER of First Note
+	Node* GetFirstNode();
+	void SetFirstNode(Node* first);
+#pragma endregion
+	bool IsEmpty();	
+	int Count();
 	void DisplayList();
 	int GetFirst();
 	int GetAt(int position);
-	void InsertFirst(int iData);
-	void DeleteFirst();
+	virtual void InsertFirst(int data) = 0;
+	virtual void DeleteFirst() = 0;
 };

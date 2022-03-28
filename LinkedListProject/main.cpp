@@ -1,5 +1,5 @@
 #include "main.h"
-#include "SingleLinkedList.h"
+
 int main() {
 	LinkedList* list = new SingleLinkedList();
 	list->InsertFirst(1);
@@ -19,9 +19,12 @@ int main() {
 	list->InsertFirst(50000);
 	list->DisplayList();
 	cout << "Insert at postion 50: " << endl;
-	list->DisplayList();
-	cout << "FIRST: " << list->GetFirst() << endl;
+	//cout << "FIRST: " << list->GetFirst() << endl;
 	cout << "GET at index 10: " << list->GetAt(10) << endl;
+	cout << "Delete first: "<< list->GetFirst();
+	list->DeleteFirst();
+	cout << endl;
+	list->DisplayList();
 	//release
 	delete list;
 	return 0;
