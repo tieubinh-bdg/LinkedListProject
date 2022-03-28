@@ -12,8 +12,8 @@ LinkedList::~LinkedList() {
 	while (a != NULL) {
 		Node* temp = a->next;
 		free(a);
-		a = temp; //new a. the old a is deleted and release.
-		//A == null at last of while.
+		a = temp; //this is new a. the old a is release.
+		//a == null at last of while.
 	}
 	cout << "Deconstructor Node" << endl;
 	/*delete[] first;*/
