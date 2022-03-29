@@ -14,7 +14,7 @@ void SingleLinkedList::InsertFirst(int data) {
 }
 
 void SingleLinkedList::DeleteFirst() {
-	if (IsEmpty()) return;
+	if (IsEmpty()) { return; }
 	Node* temp = GetFirstNode();
 	SetFirstNode(GetFirstNode()->next);
 	free(temp);
