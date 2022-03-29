@@ -8,11 +8,13 @@ private:
 public:
 	LinkedList();
 	~LinkedList();
+	Node* GetFirstNode();
+	void SetFirstNode(Node* first);
 	bool IsEmpty();
-	int GetCount();
+	int Count();
 	void DisplayList();
 	int GetFirst();
 	int GetAt(int position);
-	void InsertFirst(int iData);
-	void DeleteFirst();
+	virtual void InsertFirst(int data) = 0;
+	virtual void DeleteFirst() = 0;
 };

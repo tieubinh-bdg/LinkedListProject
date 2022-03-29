@@ -7,6 +7,7 @@ public:
 	int data;
 	Node* next;
 	Node();
-	Node(int iData);
+	//~Node();
+	Node(int data);
 	void DislayNode();
 };
