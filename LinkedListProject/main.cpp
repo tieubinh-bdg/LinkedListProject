@@ -9,11 +9,11 @@ int main() {
 	list->InsertFirst(132);
 	list->InsertFirst(40);
 	list->DisplayList();
-	cout << "Insert at postion 50: " << endl;
+	
 	cout << "GET at index 10: " << list->GetAt(10) << endl;
-	cout << "Delete first: " << list->GetFirst();
+	cout << "Delete first: " << list->GetFirst() << endl;
+	
 	list->DeleteFirst();
-	cout << endl;
 	list->DisplayList();
 	//release
 	delete list;

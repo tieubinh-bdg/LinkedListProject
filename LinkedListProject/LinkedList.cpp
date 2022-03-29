@@ -8,13 +8,11 @@ LinkedList::LinkedList() {
 }
 
 LinkedList::~LinkedList() {
-	Node* temp = first;
-	Node* current = first;
-	//while(temp != NULL)
+	Node* current = this->first;
 	while (current != NULL) {
-		current = current->next;
-		delete temp;
-		temp = current;
+		Node*  temp = current->next;
+		delete current;
+		current = temp;
 	}
 
 	cout << "Deconstructor Node" << endl;
@@ -22,7 +20,7 @@ LinkedList::~LinkedList() {
 }
 
 Node* LinkedList::GetFirstNode() {
-	return IsEmpty() ? NULL : first;
+	return IsEmpty() ? NULL : this->first;
 }
 
 void  LinkedList::SetFirstNode(Node* first) {
@@ -35,7 +33,7 @@ bool LinkedList::IsEmpty() {
 
 int LinkedList::Count() {
 	int count = 0;
-	Node* temp = first;
+	Node* temp = this->first;
 	while (temp != NULL) {
 		count++;
 		temp = temp->next;
@@ -45,7 +43,7 @@ int LinkedList::Count() {
 }
 
 void LinkedList::DisplayList() {
-	Node* current = first;
+	Node* current = this->first;
 	cout << "List: ";
 	while (current != NULL) {
 		current->DislayNode();
@@ -55,23 +53,18 @@ void LinkedList::DisplayList() {
 }
 
 int LinkedList::GetFirst() {
-	return IsEmpty() ? NULL : first->data;
+	return IsEmpty() ? NULL : this->first->data;
 }
 
 int LinkedList::GetAt(int position) {
-	if (IsEmpty()) { return NULL; }
-	Node* temp = first;
-	if (position == 0) {
-		return temp->data; //return first->iData
+	if (IsEmpty() || position > this->Count()) { 
+		return NULL; 
 	}
-	//if position out of length
-	if (position <= Count() - 1) {
-		for (int i = 0; i < position; i++) {
-			temp = temp->next;
-		}
-	}
-	else { return NULL; }
-	Node* nodeAt = temp;
 
-	return nodeAt->data;
+	Node* temp = first;
+	for (int i = 0; i < position; i++) {
+		temp = temp->next;
+	}
+
+	return temp->data;
 }
